@@ -12,10 +12,7 @@ import {
 } from '@/components/ui/morphing-dialog'
 import Link from 'next/link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
-import {
-  SOCIAL_LINKS,
-  PERSONAL_INFO,
-} from './data/personal'
+import { SOCIAL_LINKS, PERSONAL_INFO } from './data/personal'
 import { BLOG_POSTS } from './data/blogs'
 import { PROJECTS } from './data/projects'
 import { WORK_EXPERIENCE } from './data/work'
@@ -146,7 +143,10 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-3 text-lg font-medium">Blog</h3>
+        <a href='/blog' className="mb-3 flex cursor-pointer justify-between text-base font-medium">
+          <div>Blogs</div>
+          <div>View All</div>
+        </a>
         <div className="flex flex-col space-y-0">
           <AnimatedBackground
             enableHover
@@ -157,7 +157,7 @@ export default function Personal() {
               duration: 0.2,
             }}
           >
-            {BLOG_POSTS.map((post) => (
+            {BLOG_POSTS.slice(2).map((post) => (
               <Link
                 key={post.uid}
                 className="-mx-3 rounded-xl px-3 py-3"
@@ -177,7 +177,6 @@ export default function Personal() {
           </AnimatedBackground>
         </div>
       </motion.section>
-
 
       <motion.section
         variants={VARIANTS_SECTION}
@@ -253,7 +252,10 @@ export default function Personal() {
         <h3 className="mb-5 text-lg font-medium">Connect</h3>
         <p className="mb-5 text-zinc-600 dark:text-zinc-400">
           Feel free to contact me at{' '}
-          <a className="underline dark:text-zinc-300" href={`mailto:${PERSONAL_INFO.email}`}>
+          <a
+            className="dark:text-zinc-300"
+            href={`mailto:${PERSONAL_INFO.email}`}
+          >
             {PERSONAL_INFO.email}
           </a>
         </p>
