@@ -1,3 +1,10 @@
+type Profile = {
+  name: string, 
+  description: string,
+  image: string,
+  email: string,
+}
+
 type Project = {
   name: string
   description: string
@@ -25,6 +32,13 @@ type BlogPost = {
 type SocialLink = {
   label: string
   link: string
+}
+
+export const PERSONAL_INFO: Profile = {
+  name: 'Kritika Parmar',
+  description: 'Machine Learning Engineer specializing in AI-driven solutions, with expertise in NLP, deep learning, and large-scale model deployment.',
+  image: 'https://i.ibb.co/C3yWS5DS/Whats-App-Image-2025-02-26-at-19-08-59-d601d428.jpg',
+  email: 'kritika@gmail.com'
 }
 
 export const PROJECTS: Project[] = [
@@ -118,4 +132,4 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
 ]
 
-export const EMAIL = 'kritikaparmar07@email.com'
+export const EMAIL = 'kritikaparmar07@gmail.com'

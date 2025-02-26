@@ -1,13 +1,15 @@
 'use client'
 import { TextEffect } from '@/components/ui/text-effect'
 import Link from 'next/link'
+import { PERSONAL_INFO } from './data'
 
 export function Header() {
   return (
-    <header className="mb-8 flex items-center justify-between">
+    <header className="mb-8 flex items-center gap-4">
+      <img src={PERSONAL_INFO.image} alt="" className='w-15 h-15 rounded-full'/>
       <div>
-        <Link href="/" className="font-medium text-black dark:text-white">
-          Kritika Parmar
+        <Link href="/" className="text-black dark:text-white">
+          {PERSONAL_INFO.name}
         </Link>
         <TextEffect
           as="p"
