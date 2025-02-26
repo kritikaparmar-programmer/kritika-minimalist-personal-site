@@ -13,13 +13,12 @@ import {
 import Link from 'next/link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import {
-  PROJECTS,
-  WORK_EXPERIENCE,
-  BLOG_POSTS,
-  EMAIL,
   SOCIAL_LINKS,
   PERSONAL_INFO,
-} from './data'
+} from './data/personal'
+import { BLOG_POSTS } from './data/blogs'
+import { PROJECTS } from './data/projects'
+import { WORK_EXPERIENCE } from './data/work'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -254,8 +253,8 @@ export default function Personal() {
         <h3 className="mb-5 text-lg font-medium">Connect</h3>
         <p className="mb-5 text-zinc-600 dark:text-zinc-400">
           Feel free to contact me at{' '}
-          <a className="underline dark:text-zinc-300" href={`mailto:${EMAIL}`}>
-            {EMAIL}
+          <a className="underline dark:text-zinc-300" href={`mailto:${PERSONAL_INFO.email}`}>
+            {PERSONAL_INFO.email}
           </a>
         </p>
         <div className="flex items-center justify-start space-x-3">

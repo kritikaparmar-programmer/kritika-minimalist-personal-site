@@ -1,7 +1,7 @@
 'use client'
 import { TextEffect } from '@/components/ui/text-effect'
 import Link from 'next/link'
-import { PERSONAL_INFO } from './data'
+import { PERSONAL_INFO } from './data/personal'
 
 export function Header() {
   return (
